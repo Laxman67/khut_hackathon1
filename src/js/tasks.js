@@ -1,11 +1,11 @@
 // Setting initial Tasks
 
 localStorage.setItem(
-  "1",
+  1,
   JSON.stringify({
     id: 1,
-    title: "Shopping for marriage Anniversry",
-    date: new Date(),
+    title: "Creating Bakend Application Email,Alert",
+    date: new Date("21 March 2024").toLocaleDateString(),
     second: 52,
     minute: 59,
     hour: 0,
@@ -13,11 +13,11 @@ localStorage.setItem(
 );
 
 localStorage.setItem(
-  "2",
+  2,
   JSON.stringify({
     id: 2,
-    title: "Painting House",
-    date: new Date(),
+    title: "Blueprint of ChatGPT",
+    date: new Date("3 April 2024").toLocaleDateString(),
     second: 0,
     minute: 0,
     hour: 0,
@@ -26,11 +26,10 @@ localStorage.setItem(
 
 let tasks = [];
 
-// Pushing  into tasks
-for (let i = 1; i < localStorage.length; i++) {
+// Getting and Pushing  into tasks
+for (let i = 1; i <= localStorage.length; i++) {
   tasks.push(JSON.parse(localStorage.getItem(i)));
 }
 
-console.log(` from taks ${tasks}`);
-
+// exporing using ES
 export default tasks;

@@ -19,9 +19,7 @@
         </div>
         <div class="nav-links">
             <ul>
-                <a href="#">
-                    <li>Home</li>
-                </a>
+
                 <li> <a href="task.html">Tasks</a></li>
                 <li> <a href="analytics.html">Report/Analytics</a></li>
             </ul>
@@ -47,10 +45,10 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', "Sunday"],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Number of Tasks',
+                    data: [11, 7, 3, 5, 10, 3, 6],
                     borderWidth: 1
                 }]
             },

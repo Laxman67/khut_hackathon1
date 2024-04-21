@@ -1,43 +1,20 @@
 import addTask from "./addTask";
 import tasks from "./tasks";
+// Selector for Adding Task
 
-function startTimer(id) {
-  let tasktoUpdate = tasks.filter((task) => task.id == id);
+const title = document.getElementById("add-title");
+const addBtn = document.getElementById("add-btn");
+const startBtn = document.getElementById("start");
+const time = document.getElementById("add-time");
+const date = document.getElementById("add-date");
 
-  let second = tasktoUpdate[0].second;
-  let minute = tasktoUpdate[0].minute;
-  let hour = tasktoUpdate[0].hour;
+setInterval(() => {
+  time.innerHTML = new Date().toLocaleString();
+}, 1000);
 
-  setInterval(() => {
-    if (second > 59) {
-      second = 0;
-      minute += 1;
-      if (minute > 59) {
-        minute = 0;
-        hour += 1;
-      }
-    }
-
-    second += 1;
-
-    tasks.map((task) => {
-      if (task.id == id) {
-        localStorage.setItem(
-          id,
-          JSON.stringify({
-            ...task,
-            second: second,
-            minute: minute,
-            hour: hour,
-          })
-        );
-      }
-    });
-
-    // set timer .
-
-    console.log(` ${hour}:${minute}: ${second.toString().padStart(2, "0")}`);
-  }, 1000);
-}
+addBtn.addEventListener("click", function () {
+  let titleValue = title.value;
+  addTask(titleValue);
+});
 
 // startTimer(1);

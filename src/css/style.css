@@ -120,3 +120,17 @@ canvas #myChart {
   width: 50%;
   height: 400px;
 }
+
+@media screen and (max-width: 760px) {
+  #task {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #task .title {
+    width: 90%;
+  }
+
+  #task .btn button {
+    width: 70px;
+  }
+}
